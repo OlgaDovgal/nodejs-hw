@@ -28,9 +28,9 @@ app.get('/notes', (req, res) => {
   });
 });
 app.get('/notes/:noteId', (req, res) => {
-  const { userId } = req.params();
+  const { noteId } = req.params();
   res.status(200).json({
-    message: `Retrieved note with ID: ${userId}`,
+    message: `Retrieved note with ID: ${noteId}`,
   });
 });
 app.get('/test-error', () => {
@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
   const isProd = process.env.NODE_ENV === 'production';
   res.status(500).json({
     message: isProd
-      ? 'Somethind went wrong. Please try again later.'
+      ? 'Something went wrong. Please try again later.'
       : err.message,
   });
 });
