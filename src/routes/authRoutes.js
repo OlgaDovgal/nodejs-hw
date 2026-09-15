@@ -9,7 +9,7 @@ import {
   loginUser,
   logoutUser,
   refreshUserSession,
-} from '../controllers/authControllers.js';
+} from '../controllers/authController.js';
 
 const router = Router();
 router.post('/auth/register', celebrate(registerUserSchema), registerUser);
