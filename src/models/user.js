@@ -9,7 +9,7 @@ const userSchema = new Schema(
   { timestamps: true },
 );
 userSchema.methods.toJSON = function () {
-  const obj = this.toObject;
+  const obj = this.toObject();
   delete obj.password;
   return obj;
 };
